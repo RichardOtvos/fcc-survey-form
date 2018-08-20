@@ -21,9 +21,36 @@
             margin-top: 20px;
         }
 
-        input{
+        input,
+        select,
+        textarea{
             width: 300px;
             font-size: 16px;
+        }
+
+        textarea{
+            height: 70px;
+        }
+
+        .radio-fields,
+        .checkbox-fields{
+            margin-top: 20px;
+        }
+
+        .radio-fields label,
+        .radio-fields input{
+            display: inline-block;
+            width: auto;
+        }
+
+        .checkbox-fields label,
+        .checkbox-fields input{
+            display: inline-block;
+            width: auto;
+        }
+
+        .checkbox-fields p{
+            margin-bottom: 5px;
         }
     </style>
 </head>
@@ -47,8 +74,36 @@
             <input type="number" id="number" name="number" required min="0" max="5" placeholder="max 5, dont drink more!">
         </div>
         <div>
-            <label for="flavour" id="flavour-label">Best type of Monster:</label>
-            <input type="text" id="flavour" name="flavour" required placeholder="eg.: Monster Rehab Peach">
+            <label for="dropdown" id="flavour-label">Best type of Monster:</label>
+            <select name="flavour" id="dropdown">
+                <option value="green">The green one</option>
+                <option value="blue">The blue one</option>
+                <option value="yellow">The yellow one</option>
+                <option value="ultra-white">Ultra White</option>
+                <option value="ultra-red">Ultra Red</option>
+                <option value="reahab-it">Rehab Ice Tea</option>
+                <option value="reahab-peach">Rehab Peach</option>
+            </select>
+            <div class="radio-fields">
+                <input type="radio" id="carb" name="prefer-carbs" value="carbs">
+                <label for="carb">Monster with carbs</label>
+                <br>
+                <input type="radio" id="no-carb" name="prefer-carbs" value="no-carbs">
+                <label for="no-carb">Monster without carbs</label>
+            </div>
+            <div class="checkbox-fields">
+                <p>What other energy drinks you drink?</p>
+                <input type="checkbox" id="red-bull" value="red-bull" name="other-brands">
+                <label for="red-bull">Red Bull</label>
+                <input type="checkbox" id="hell" value="hell" name="other-brands">
+                <label for="red-bull">Hell</label>
+                <input type="checkbox" id="watt" value="watt" name="other-brands">
+                <label for="red-bull">Watt</label>
+            </div>
+            <label for="comments">Additional comments:</label>
+            <textarea id="comments" name="comments"></textarea>
+            <br>
+            <button type="submit" id="submit">Submit this amazing form</button>
         </div>
     </form>
 </div>
